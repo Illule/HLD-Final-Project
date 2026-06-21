@@ -1,0 +1,164 @@
+/* ============================================================
+   Trending Searches Styles
+   ============================================================ */
+
+.trending-section {
+  margin-top: var(--space-12);
+  animation: slideUp 0.5s ease 0.4s both;
+}
+
+.trending-title {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-size: var(--font-size-xl);
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: var(--space-6);
+}
+
+.trending-icon {
+  font-size: 1.4rem;
+}
+
+.trending-badge {
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  color: var(--accent-green);
+  background: rgba(52, 211, 153, 0.1);
+  border: 1px solid rgba(52, 211, 153, 0.2);
+  padding: 2px 10px;
+  border-radius: var(--radius-full);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* ---- Grid Layout ---- */
+.trending-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: var(--space-4);
+}
+
+/* ---- Card ---- */
+.trending-card {
+  background: var(--bg-glass);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  transition: all var(--transition-base);
+  animation: slideUp 0.3s ease both;
+  cursor: default;
+}
+
+.trending-card:hover {
+  background: var(--bg-surface-hover);
+  border-color: var(--border-medium);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.trending-card.top-trend {
+  border-color: rgba(66, 133, 244, 0.2);
+  background: rgba(66, 133, 244, 0.05);
+}
+
+.trending-card.top-trend:hover {
+  border-color: rgba(66, 133, 244, 0.3);
+  box-shadow: var(--shadow-glow-blue);
+}
+
+/* ---- Card Header ---- */
+.trending-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-2);
+}
+
+.trending-rank {
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  color: var(--text-tertiary);
+  letter-spacing: 0.5px;
+}
+
+.top-trend .trending-rank {
+  color: var(--accent-blue);
+}
+
+.trending-score {
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  color: var(--text-secondary);
+  background: var(--bg-surface);
+  padding: 1px 6px;
+  border-radius: var(--radius-full);
+}
+
+/* ---- Query Text ---- */
+.trending-query {
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: var(--space-3);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ---- Score Bar ---- */
+.trending-bar-bg {
+  height: 4px;
+  background: var(--bg-surface);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.trending-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent-blue), var(--accent-purple));
+  border-radius: 2px;
+  transition: width 0.6s ease;
+}
+
+.top-trend .trending-bar-fill {
+  background: linear-gradient(90deg, var(--accent-blue), var(--accent-pink));
+}
+
+/* ---- Skeleton Loading ---- */
+.trending-card.skeleton {
+  pointer-events: none;
+}
+
+.skeleton-text {
+  height: 16px;
+  width: 70%;
+  background: linear-gradient(90deg, var(--bg-surface) 25%, var(--bg-surface-hover) 50%, var(--bg-surface) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 4px;
+  margin-bottom: var(--space-3);
+}
+
+.skeleton-bar {
+  height: 4px;
+  width: 100%;
+  background: linear-gradient(90deg, var(--bg-surface) 25%, var(--bg-surface-hover) 50%, var(--bg-surface) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 2px;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 640px) {
+  .trending-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-3);
+  }
+
+  .trending-card {
+    padding: var(--space-3);
+  }
+}

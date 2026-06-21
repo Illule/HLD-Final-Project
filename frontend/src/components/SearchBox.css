@@ -1,0 +1,175 @@
+/* ============================================================
+   SearchBox Styles — Glassmorphism search input
+   ============================================================ */
+
+.search-box-container {
+  position: relative;
+  width: 100%;
+  animation: slideUp 0.5s ease 0.2s both;
+}
+
+/* ---- Input Wrapper (glass effect) ---- */
+.search-input-wrapper {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  background: var(--bg-glass);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xl);
+  transition: all var(--transition-base);
+  box-shadow: var(--shadow-md);
+}
+
+.search-input-wrapper:hover {
+  border-color: var(--border-medium);
+  box-shadow: var(--shadow-md), var(--shadow-glow-blue);
+}
+
+.search-input-wrapper:focus-within {
+  border-color: var(--accent-blue);
+  box-shadow: var(--shadow-md), 0 0 0 3px rgba(66, 133, 244, 0.15);
+}
+
+.search-input-wrapper.has-suggestions {
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  border-bottom-color: var(--border-subtle);
+}
+
+/* ---- Search Icon ---- */
+.search-icon {
+  color: var(--text-secondary);
+  flex-shrink: 0;
+  transition: color var(--transition-fast);
+}
+
+.search-input-wrapper:focus-within .search-icon {
+  color: var(--accent-blue);
+}
+
+/* ---- Input Field ---- */
+.search-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: var(--text-primary);
+  font-family: var(--font-family);
+  font-size: var(--font-size-lg);
+  font-weight: 400;
+  letter-spacing: 0.2px;
+  caret-color: var(--accent-blue);
+}
+
+.search-input::placeholder {
+  color: var(--text-tertiary);
+  font-weight: 300;
+}
+
+/* ---- Loading Spinner ---- */
+.search-spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--border-subtle);
+  border-top-color: var(--accent-blue);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  flex-shrink: 0;
+}
+
+/* ---- Clear Button ---- */
+.search-clear {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border: none;
+  background: var(--bg-surface-hover);
+  color: var(--text-secondary);
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.search-clear:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: var(--text-primary);
+}
+
+/* ---- Search Button ---- */
+.search-button {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-4);
+  background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+  color: white;
+  border: none;
+  border-radius: var(--radius-full);
+  font-family: var(--font-family);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  flex-shrink: 0;
+  letter-spacing: 0.3px;
+}
+
+.search-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(66, 133, 244, 0.4);
+}
+
+.search-button:active {
+  transform: translateY(0);
+}
+
+.search-button-icon {
+  display: none;
+}
+
+/* ---- Error State ---- */
+.search-error {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-4);
+  margin-top: var(--space-3);
+  color: var(--accent-red);
+  font-size: var(--font-size-sm);
+  background: rgba(239, 68, 68, 0.08);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  border-radius: var(--radius-md);
+  animation: slideDown 0.2s ease;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 640px) {
+  .search-input-wrapper {
+    padding: var(--space-2) var(--space-3);
+  }
+
+  .search-input {
+    font-size: var(--font-size-base);
+  }
+
+  .search-button-text {
+    display: none;
+  }
+
+  .search-button-icon {
+    display: block;
+  }
+
+  .search-button {
+    padding: var(--space-2);
+    border-radius: var(--radius-full);
+    width: 36px;
+    height: 36px;
+    justify-content: center;
+  }
+}

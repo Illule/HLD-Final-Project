@@ -1,0 +1,3 @@
+com\typeahead\service\BatchWriterTest.class
+com\typeahead\service\SuggestionServiceTest.class
+com\typeahead\cache\ConsistentHashRingTest.class

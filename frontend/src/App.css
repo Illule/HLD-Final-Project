@@ -1,0 +1,121 @@
+/* ============================================================
+   App Styles — Main layout and global component styles
+   ============================================================ */
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ---- Header / Hero ---- */
+.app-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 8vh;
+  padding-bottom: var(--space-8);
+  animation: fadeIn 0.6s ease;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  margin-bottom: var(--space-4);
+}
+
+.logo-icon {
+  animation: glow 3s ease-in-out infinite;
+  border-radius: var(--radius-full);
+}
+
+.logo-text {
+  font-size: var(--font-size-hero);
+  font-weight: 700;
+  letter-spacing: -2px;
+  line-height: 1;
+}
+
+.logo-type {
+  background: linear-gradient(135deg, #4285f4, #8ab4f8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.logo-ahead {
+  background: linear-gradient(135deg, #8b5cf6, #c084fc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.tagline {
+  font-size: var(--font-size-lg);
+  color: var(--text-secondary);
+  font-weight: 300;
+  letter-spacing: 0.5px;
+}
+
+/* ---- Main Content ---- */
+.app-main {
+  width: 100%;
+  max-width: 680px;
+  padding: 0 var(--space-6);
+  flex: 1;
+}
+
+/* ---- Search Notification ---- */
+.search-notification {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  margin-top: var(--space-4);
+  background: rgba(52, 211, 153, 0.1);
+  border: 1px solid rgba(52, 211, 153, 0.2);
+  border-radius: var(--radius-md);
+  color: var(--accent-green);
+  font-size: var(--font-size-sm);
+  animation: slideDown 0.3s ease;
+}
+
+.search-notification strong {
+  color: var(--text-primary);
+}
+
+/* ---- Footer ---- */
+.app-footer {
+  padding: var(--space-8) var(--space-6);
+  text-align: center;
+  color: var(--text-tertiary);
+  font-size: var(--font-size-xs);
+  width: 100%;
+}
+
+.footer-dot {
+  margin: 0 var(--space-2);
+  color: var(--text-tertiary);
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 768px) {
+  .app-header {
+    padding-top: 4vh;
+  }
+
+  .logo-text {
+    font-size: var(--font-size-2xl);
+    letter-spacing: -1px;
+  }
+
+  .tagline {
+    font-size: var(--font-size-sm);
+  }
+
+  .app-main {
+    padding: 0 var(--space-4);
+  }
+}

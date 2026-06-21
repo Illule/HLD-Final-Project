@@ -1,0 +1,103 @@
+/* ============================================================
+   Suggestions Dropdown Styles
+   ============================================================ */
+
+.suggestions-list {
+  list-style: none;
+  background: rgba(18, 18, 42, 0.95);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid var(--border-subtle);
+  border-top: none;
+  border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+  overflow: hidden;
+  animation: slideDown 0.2s ease;
+  box-shadow: var(--shadow-lg);
+}
+
+.suggestion-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  cursor: pointer;
+  transition: background var(--transition-fast);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.suggestion-item:last-child {
+  border-bottom: none;
+}
+
+.suggestion-item:hover,
+.suggestion-item.hovered {
+  background: var(--bg-surface-hover);
+}
+
+.suggestion-item.selected {
+  background: rgba(66, 133, 244, 0.12);
+}
+
+.suggestion-item.selected .suggestion-icon {
+  color: var(--accent-blue);
+}
+
+/* ---- Suggestion Icon ---- */
+.suggestion-icon {
+  color: var(--text-tertiary);
+  flex-shrink: 0;
+  transition: color var(--transition-fast);
+}
+
+.suggestion-item:hover .suggestion-icon {
+  color: var(--text-secondary);
+}
+
+/* ---- Suggestion Text ---- */
+.suggestion-text {
+  flex: 1;
+  font-size: var(--font-size-base);
+  color: var(--text-primary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.suggestion-match {
+  font-weight: 400;
+  color: var(--text-secondary);
+}
+
+.suggestion-rest {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+/* ---- Count Badge ---- */
+.suggestion-count {
+  font-size: var(--font-size-xs);
+  font-weight: 500;
+  color: var(--text-tertiary);
+  background: var(--bg-surface);
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+  flex-shrink: 0;
+  letter-spacing: 0.5px;
+}
+
+.suggestion-item:hover .suggestion-count,
+.suggestion-item.selected .suggestion-count {
+  color: var(--text-secondary);
+  background: var(--bg-surface-hover);
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 640px) {
+  .suggestion-item {
+    padding: var(--space-3);
+  }
+
+  .suggestion-text {
+    font-size: var(--font-size-sm);
+  }
+}
